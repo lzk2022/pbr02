@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\core\Application.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\core\Window.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\utils\Global.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\scene\Renderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\scene\Scene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\asset\Texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\asset\Asset.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\utils\Image.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\utils\Ext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\core\Sync.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\scene\UI.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\core\Input.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\example\Scene01.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\core\Clock.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\asset\Shader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\utils\Math.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\component\Mesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\asset\VAO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\asset\Buffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\component\Material.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\asset\Sampler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\asset\FBO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\component\Camera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\component\Transform.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\component\Light.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\component\Animation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\component\Model.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\core\Application.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\core\Window.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\utils\Global.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\scene\Renderer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\scene\Scene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\scene\ResourceManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\scene\Factory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\asset\Texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\asset\Asset.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\utils\Image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\utils\Ext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\core\Sync.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\utils\Log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\scene\UI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\core\Input.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\example\Scene01.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\core\Clock.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\asset\Shader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\utils\Math.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\component\Mesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\component\Component.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\asset\VAO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\asset\Buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\component\Material.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\component\Uniform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\component\Uniform.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\component\Material.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\asset\Sampler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\asset\Sampler.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\asset\FBO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\scene\Entity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\scene\Entity.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\component\Camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\component\Transform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\component\Light.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\component\Animation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\component\Model.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\asset\Shader.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\example\Scene02.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Doc\note.md" />
+    <None Include="Source\scene\ResourceManager.hpp" />
+    <None Include="Doc\命名规范.md" />
+    <None Include="Shader\core\bloom.glsl" />
+    <None Include="Shader\core\environment_BRDF.glsl" />
+    <None Include="Shader\core\equirect2cube.glsl" />
+    <None Include="Shader\core\framebuffer.glsl" />
+    <None Include="Shader\core\infinite_grid.glsl" />
+    <None Include="Shader\core\irradiance_map.glsl" />
+    <None Include="Shader\core\light.glsl" />
+    <None Include="Shader\core\pbr_shading.glsl" />
+    <None Include="Shader\core\pbr_uniform.glsl" />
+    <None Include="Shader\core\prefilter_envmap.glsl" />
+    <None Include="Shader\core\renderer_input.glsl" />
+    <None Include="Shader\core\skybox.glsl" />
+    <None Include="Shader\core\wireframe.glsl" />
+    <None Include="Shader\scene_01\cull.glsl" />
+    <None Include="Shader\scene_01\pbr.glsl" />
+    <None Include="Shader\scene_01\post_process.glsl" />
+    <None Include="Shader\utils\easing.glsl" />
+    <None Include="Shader\utils\extension.glsl" />
+    <None Include="Shader\utils\gaussian.glsl" />
+    <None Include="Shader\utils\material.glsl" />
+    <None Include="Shader\utils\postprocess.glsl" />
+    <None Include="Shader\utils\projection.glsl" />
+    <None Include="Shader\utils\sampling.glsl" />
+    <None Include="Shader\utils\sh9.glsl" />
+    <None Include="Shader\scene_01\pbr1.glsl" />
+  </ItemGroup>
+</Project>
