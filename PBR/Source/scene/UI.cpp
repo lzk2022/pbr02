@@ -540,7 +540,7 @@ namespace scene {
 
         Text("PBR %s", version);    // 显示软件版本
         Separator();                // 绘制分隔符
-        Text("由 刘芝坤 编写的开源作品，2024年7月。");
+        Text("由 LZK 编写的开源作品，2024年7月。");
         Text("一个用于在 OpenGL 中进行图形处理的简单渲染库。");
         Separator();
 
