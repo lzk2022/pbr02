@@ -13,6 +13,9 @@
 该项目目前还在进行中，后面会添加游戏引擎中的更多功能
 
 ## 目前实现的功能截图
+![alt text](image/README/image-1.png)
 
-![alt text](image/README/image.png)
+
+
+
 
