@@ -4,9 +4,10 @@
 #include <GLFW/glfw3.h>
 
 namespace core {
+
 	std::unordered_map<unsigned char, bool> Input::mKeybook{
 		{'w',0},{'s',0},{'a',0},{'d',0},{'z',0},{'r',0},
-		/*{VK_SPACE,0},{VK_RETURN,0},*/{VK_ESCAPE,0}
+		{VK_SPACE,0},{VK_RETURN,0},{VK_ESCAPE,0}
 	};
 	void Input::Clear()
 	{
@@ -89,5 +90,19 @@ namespace core {
 		mCursorDeltaX = newX - mCursorPosX;
 		mCursorDeltaY = newY - mCursorPosY;
 		glfwSetCursorPos(Window::mpWindow, mCursorPosX, mCursorPosY);
+	}
+	void Input::SetMouseDown(MouseButton button, bool pressed)
+	{
+		switch (button) {
+		case MouseButton::Left:   mMouseButtonL = pressed;  break;
+		case MouseButton::Right:  mMouseButtonR = pressed;  break;
+		case MouseButton::Middle: mMouseButtonM = pressed;  break;
+		default:
+			return;
+		}
+	}
+	void Input::SetScroll(float offset)
+	{
+		mScrollOffset += offset;
 	}
 }

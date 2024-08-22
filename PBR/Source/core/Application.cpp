@@ -7,6 +7,7 @@
 #include "../core/Input.h"
 #include "../core/Clock.h"
 #include "../utils/Global.h"
+#include "../core/Event.h"
 
 using namespace scene;
 namespace core {
@@ -19,6 +20,7 @@ namespace core {
 		LOG_TRACK;
 		Window::Init();
 		UI::Init();
+		Event::RegisterCallBacks();
 		GetHardware();
 	}
 	void Application::Load()

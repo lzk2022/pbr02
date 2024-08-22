@@ -11,6 +11,7 @@ namespace core {
 		static void Init();
 		static void Clear();
 		static void Rename(const std::string& title);
+		static void Resize();
 		static GLFWwindow* WindowPtr();
 		static float Width();
 		static float Height();

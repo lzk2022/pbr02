@@ -17,7 +17,7 @@
 
 #include "../utils/Log.h"
 #include "../core/Window.h"
-#include "Factory.h"
+#include "../scene/Factory.h"
 #include "../utils/Ext.h"
 #include "../utils/Global.h"
 #include "../core/Input.h"
@@ -202,12 +202,12 @@ namespace scene {
             static float f = 0.0f;
             static int counter = 0;
 
-            ImGui::Text(u8"你好，世界！");                           // 显示一些文本
+            ImGui::Text("你好，世界！");                           // 显示一些文本
             ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // 使用滑块编辑 1 个 float 值
-            if (ImGui::Button(u8"按键"))                              // 按钮点击时返回 true
+            if (ImGui::Button("按键"))                              // 按钮点击时返回 true
                 counter++;
             ImGui::SameLine();
-            ImGui::Text(u8"计数器 = %d", counter);
+            ImGui::Text("计数器 = %d", counter);
         }
     }
     void UI::BeginFrame()
@@ -226,24 +226,24 @@ namespace scene {
     bool UI::NewInspector(void) 
     {
         using namespace ImGui;
-        static const float w = 256.0f * 1.25f;  // 检查器窗口的宽度，适用于1600x900分辨率
-        static const float h = 612.0f * 1.25f;  // 检查器窗口的高度
+        static const float width = 256.0f * 1.25f;  // 检查器窗口的宽度，适用于1600x900分辨率
+        static const float height = 612.0f * 1.25f;  // 检查器窗口的高度
 
-        SetNextWindowPos(ImVec2(Window::mWidth - w, (Window::mHeight - h) * 0.5f));  // 设置窗口位置
-        SetNextWindowSize(ImVec2(w, h));  // 设置窗口大小
+        SetNextWindowPos(ImVec2(Window::mWidth - width, (Window::mHeight - height) * 0.5f));  // 设置窗口位置
+        SetNextWindowSize(ImVec2(width, height));  // 设置窗口大小
 
-        static ImGuiWindowFlags inspector_flags = ImGuiWindowFlags_NoMove |  // 检查器窗口的标志，禁止移动、调整大小和折叠
+        static ImGuiWindowFlags inspectorFlags = ImGuiWindowFlags_NoMove |  // 检查器窗口的标志，禁止移动、调整大小和折叠
             ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse;
 
         PushID("Inspector Window");  // 推送检查器窗口的ID
 
-        if (Begin(ICON_FK_LOCATION_ARROW " Inspector", 0, inspector_flags)) {  // 创建检查器窗口
+        if (Begin(ICON_FK_LOCATION_ARROW " 检测器", 0, inspectorFlags)) {  // 创建检查器窗口
             return true;  // 如果窗口创建成功，返回true
         }
 
         LOG_ERROR("由于裁剪问题，加载检查器失败...");
         LOG_ERROR("你是否绘制了全屏不透明窗口？");
-        return false;  // 返回false，表示窗口创建失败
+        return false;
     }
     void UI::EndInspector(void)
     {
@@ -252,8 +252,8 @@ namespace scene {
     }
     void UI::DrawGizmo(scene::Entity& camera, scene::Entity& target, Gizmo z)
     {
-        static const ImVec2 win_pos = ImVec2(0.0f, 50.0f);  // 窗口位置
-        static const ImVec2 win_size = ImVec2((float)Window::mWidth, (float)Window::mHeight - 82.0f);  // 窗口大小
+        static const ImVec2 winPos = ImVec2(0.0f, 50.0f);  // 窗口位置
+        static const ImVec2 winSize = ImVec2((float)Window::mWidth, (float)Window::mHeight - 82.0f);  // 窗口大小
 
         ImGuizmo::MODE mode = ImGuizmo::MODE::LOCAL;  // 默认Gizmo模式为局部模式
         ImGuizmo::OPERATION operation = ImGuizmo::OPERATION::TRANSLATE;  // 默认Gizmo操作为平移
@@ -285,13 +285,13 @@ namespace scene {
         static const glm::vec3 RvL = glm::vec3(1.0f, 1.0f, -1.0f);  // 右手到左手的缩放向量
         glm::mat4 transform = glm::scale(T.mTransform, RvL);  // 应用缩放
 
-        ImGui::SetNextWindowPos(win_pos);  // 设置下一个窗口的位置
-        ImGui::SetNextWindowSize(win_size);  // 设置下一个窗口的大小
+        ImGui::SetNextWindowPos(winPos);  // 设置下一个窗口的位置
+        ImGui::SetNextWindowSize(winSize);  // 设置下一个窗口的大小
         ImGui::Begin("##Invisible Gizmo Window", 0, gInvisibleWindowFlags);  // 创建一个不可见窗口用于绘制Gizmo
 
         ImGuizmo::SetOrthographic(true);  // 设置Gizmo为正交模式
         ImGuizmo::SetDrawlist();  // 设置绘图列表
-        ImGuizmo::SetRect(win_pos.x, win_pos.y, win_size.x, win_size.y);  // 设置Gizmo绘制区域
+        ImGuizmo::SetRect(winPos.x, winPos.y, winSize.x, winSize.y);  // 设置Gizmo绘制区域
         ImGuizmo::Manipulate(value_ptr(V), value_ptr(P), operation, mode, value_ptr(transform));  // 操作Gizmo
 
         // 如果Gizmo正在被使用，则更新目标实体的Transform组件
@@ -473,16 +473,16 @@ namespace scene {
         if (!*isShow) return;
         using namespace ImGui;
         SetNextWindowSize(ImVec2(1280.0f / 2.82f, 720.0f / 1.6f));      // 设置窗口大小
-        if (!Begin(u8"使用方法", isShow, ImGuiWindowFlags_NoResize)) { 
+        if (!Begin("使用方法", isShow, ImGuiWindowFlags_NoResize)) { 
             End();
             return;
         }
         Spacing();  // 添加空白
 
         const ImVec4 textColor = ImVec4(0.4f, 0.8f, 0.4f, 1.0f);  // 文本颜色
-        const char instructions[] = u8"只需玩一下就能发现 :)";       // 使用说明文本
+        const char instructions[] = "只需玩一下就能发现";       // 使用说明文本
 
-        if (TreeNode(u8"基础指南")) { 
+        if (TreeNode("基础指南")) { 
             Spacing();
             Indent(10.0f);                              // 缩进
             PushStyleColor(ImGuiCol_Text, textColor);   // 设置文本颜色
@@ -494,11 +494,11 @@ namespace scene {
             TreePop();                                  // 关闭“基础指南”节点
         }
 
-        if (TreeNode(u8"鼠标")) {
+        if (TreeNode("鼠标")) {
             Spacing();
-            BulletText(u8"移动光标旋转相机。");
-            BulletText(u8"按住右键并滑动来缩放。");
-            BulletText(u8"按住左键以弧球模式旋转。");
+            BulletText("移动光标旋转相机。");
+            BulletText("按住右键并滑动来缩放。");
+            BulletText("按住左键以弧球模式旋转。");
             Spacing();
             TreePop();
         }
@@ -511,18 +511,18 @@ namespace scene {
             SameLine(128.0f, 0.0f); // 在同一行显示
         };
 
-        if (TreeNode(u8"键盘")) {
+        if (TreeNode("键盘")) {
             Spacing();
-            colorText(u8"Enter");
-            Text(u8"切换UI检查器开/关。"); 
-            colorText(u8"Escape"); 
-            Text(u8"确认退出窗口。");
-            colorText(u8"WASD");
-            Text(u8"在四个平面方向移动相机。");
+            colorText("Enter");
+            Text("切换UI检查器开/关。"); 
+            colorText("Escape"); 
+            Text("确认退出窗口。");
+            colorText("WASD");
+            Text("在四个平面方向移动相机。");
             colorText("Space/Z");
-            Text(u8"向上/向下移动相机。");
+            Text("向上/向下移动相机。");
             colorText("R");
-            Text(u8"重置相机到初始位置。");
+            Text("重置相机到初始位置。");
             Spacing();
             TreePop();
         }
@@ -608,6 +608,7 @@ namespace scene {
     void UI::AddMenuBarInco(const std::string& currTitle,bool& isBackHome)
     {
         using namespace ImGui;
+        static bool musicOn = true;            // 音乐是否开启
         // 菜单图标项
         SameLine(GetWindowWidth() - 303.0f);                    // 在同一行显示图标项
         static const ImVec4 tooltipBgColor = ImVec4(0.0f, 0.0f, 0.0f, 1.0f);  // 工具提示背景颜色
@@ -624,14 +625,36 @@ namespace scene {
             PopStyleColor();                                    // 恢复背景颜色
         }
 
+        if (MenuItem(Window::mLayer == Layer::ImGui ? ICON_FK_PICTURE_O : ICON_FK_COFFEE)) {  // “图像”或“咖啡”图标项
+            //Input::SetKeyDown(VK_RETURN, true);  // 按下回车键
+        }
+        else if (IsItemHovered()) {  // 如果“图像”或“咖啡”图标项被悬停
+            PushStyleColor(ImGuiCol_PopupBg, tooltipBgColor);  // 设置工具提示背景颜色
+            BeginTooltip();  // 开始工具提示
+            TextUnformatted("返回界面模型 (Enter)");  // 显示工具提示文本
+            EndTooltip();  // 结束工具提示
+            PopStyleColor();  // 恢复背景颜色
+        }
+
+        if (MenuItem(musicOn ? ICON_FK_VOLUME_UP : ICON_FK_VOLUME_MUTE)) {  // “音量”图标项
+            musicOn = !musicOn;  // 切换音乐开关
+        }
+        else if (IsItemHovered()) {  // 如果“音量”图标项被悬停
+            PushStyleColor(ImGuiCol_PopupBg, tooltipBgColor);  
+            BeginTooltip();  
+            TextUnformatted("音乐 开/关"); 
+            EndTooltip();  
+            PopStyleColor();  
+        }
+
         // 电源图标
         if (MenuItem(ICON_FK_POWER_OFF)) {
-            //Input::SetKeyDown(VK_ESCAPE, true);
+            Input::SetKeyDown(VK_ESCAPE, true);
         }
         else if (IsItemHovered()) {
             PushStyleColor(ImGuiCol_PopupBg, tooltipBgColor);
             BeginTooltip();
-            TextUnformatted("Close (Esc)");
+            TextUnformatted("退出程序 (Esc)");
             EndTooltip();
             PopStyleColor();
         }

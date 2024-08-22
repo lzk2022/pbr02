@@ -112,7 +112,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;VK_ESCAPE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;VK_ESCAPE;VK_RETURN;VK_SPACE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -155,6 +155,7 @@
     <ClCompile Include="Source\component\Material.cpp" />
     <ClCompile Include="Source\asset\Buffer.cpp" />
     <ClCompile Include="Source\component\Mesh.cpp" />
+    <ClCompile Include="Source\core\Event.cpp" />
     <ClCompile Include="Source\utils\Math.cpp" />
     <ClCompile Include="Source\asset\Shader.cpp" />
     <ClCompile Include="Source\core\Clock.cpp" />
@@ -182,6 +183,7 @@
     <ClInclude Include="Source\component\Animation.h" />
     <ClInclude Include="Source\component\Light.h" />
     <ClInclude Include="Source\component\Camera.h" />
+    <ClInclude Include="Source\core\Event.h" />
     <ClInclude Include="Source\example\Scene02.h" />
     <ClInclude Include="Source\scene\Entity.h" />
     <ClInclude Include="Source\asset\FBO.h" />

@@ -23,8 +23,9 @@ namespace core {
 		static float GetCursorOffset(MouseAxis axis);	
 		static bool GetKeyDown(unsigned char key);
 		static glm::ivec2 GetCursorPosition();
-	private:
 		static void SetCursor(float newX,float newY);
+		static void SetMouseDown(MouseButton button, bool pressed);
+		static void SetScroll(float offset);
 	private:
 		static std::unordered_map<uint8_t, bool> mKeybook;
 		inline static float mCursorPosX = 0;		// 光标当前位置的X坐标

@@ -65,6 +65,16 @@ namespace core {
 		mTitle = title;
 		glfwSetWindowTitle(mpWindow, utils::ToU8(mTitle).c_str());  // 设置窗口标题
 	}
+	void Window::Resize()
+	{
+		// 在这个演示中，我们简单地锁定窗口位置、大小和宽高比
+		glfwSetWindowPos(mpWindow, mPosX, mPosY);  // 设置窗口位置
+		glfwSetWindowSize(mpWindow, mWidth, mHeight);  // 设置窗口大小
+		glfwSetWindowAspectRatio(mpWindow, 16, 9);  // 设置窗口宽高比
+
+		// 视口位置以像素为单位，相对于窗口左下角
+		glViewport(0, 0, mWidth, mHeight);  // 设置OpenGL视口
+	}
 	GLFWwindow* Window::WindowPtr()
 	{
 		return mpWindow;
