@@ -121,4 +121,15 @@ namespace core {
 
 		return false;
 	}
+	void Window::OnLayerSwitch()
+	{
+		mLayer = (mLayer == Layer::ImGui) ? Layer::Scene : Layer::ImGui;  // 切换图层
+		if (mLayer == Layer::ImGui) {
+			Input::ShowCursor();  // 显示鼠标光标
+		}
+		else {
+			Input::HideCursor();  // 隐藏鼠标光标
+			Input::Clear();  // 清除输入状态
+		}
+	}
 }

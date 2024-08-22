@@ -38,6 +38,7 @@ namespace core {
 	{
 		LOG_TRACK;
 		CheckExit();
+		CheckSwitchLayer();
 		Clock::Update();
 		Renderer::DrawScene();
 		Renderer::DrawImGui();
@@ -102,9 +103,18 @@ namespace core {
 	void Application::CheckExit()
 	{
 		// 检查用户是否请求退出
-		if (Input::GetKeyDown(VK_ESCAPE)) {
+		if (Input::GetKeyDown(KB_ESCAPE)) {
 			mIsExit = Window::OnExitRequest();  // 用户请求退出应用程序
-			Input::SetKeyDown(VK_ESCAPE, false);  // 释放ESC键
+			Input::SetKeyDown(KB_ESCAPE, false);  // 释放ESC键
+		}
+	}
+	void Application::CheckSwitchLayer()
+	{
+		if (Input::GetKeyDown(KB_ENTER)) {
+			if (Renderer::CurrScene()->mTitle != "欢迎界面") {
+				Window::OnLayerSwitch();  // 切换ImGui图层
+			}
+			Input::SetKeyDown(KB_ENTER, false);  // 释放Enter键
 		}
 	}
 }

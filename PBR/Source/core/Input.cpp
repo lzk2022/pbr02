@@ -7,7 +7,7 @@ namespace core {
 
 	std::unordered_map<unsigned char, bool> Input::mKeybook{
 		{'w',0},{'s',0},{'a',0},{'d',0},{'z',0},{'r',0},
-		{VK_SPACE,0},{VK_RETURN,0},{VK_ESCAPE,0}
+		{KB_SPACE,0},{KB_ENTER,0},{KB_ESCAPE,0}
 	};
 	void Input::Clear()
 	{

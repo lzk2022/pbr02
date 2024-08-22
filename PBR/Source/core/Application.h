@@ -13,6 +13,7 @@ public:
 private:
 	void GetHardware();
 	void CheckExit();
+	void CheckSwitchLayer();
 };
 }
 

@@ -86,14 +86,14 @@ namespace core {
         case GLFW_KEY_RIGHT:  case GLFW_KEY_D:         _key = 'd';        break;
         case GLFW_KEY_Z:                               _key = 'z';        break;
         case GLFW_KEY_R:                               _key = 'r';        break;
-        case GLFW_KEY_SPACE:                           _key = VK_SPACE;   break;
-        case GLFW_KEY_ENTER:  case GLFW_KEY_KP_ENTER:  _key = VK_RETURN;  break;
-        case GLFW_KEY_ESCAPE:                          _key = VK_ESCAPE;  break;
+        case GLFW_KEY_SPACE:                           _key = KB_SPACE;   break;
+        case GLFW_KEY_ENTER:  case GLFW_KEY_KP_ENTER:  _key = KB_ENTER;  break;
+        case GLFW_KEY_ESCAPE:                          _key = KB_ESCAPE;  break;
         default:
             return;  // 忽略除上述注册键以外的键
         }
 
-        if (_key == VK_ESCAPE || _key == VK_RETURN) {
+        if (_key == KB_ESCAPE || _key == KB_ENTER) {
             // 功能键的按下事件由应用程序处理
             if (action == GLFW_PRESS || action == GLFW_REPEAT) {
                 Input::SetKeyDown(_key, true);

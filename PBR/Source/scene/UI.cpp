@@ -649,7 +649,7 @@ namespace scene {
 
         // µÁ‘¥Õº±Í
         if (MenuItem(ICON_FK_POWER_OFF)) {
-            Input::SetKeyDown(VK_ESCAPE, true);
+            Input::SetKeyDown(KB_ESCAPE, true);
         }
         else if (IsItemHovered()) {
             PushStyleColor(ImGuiCol_PopupBg, tooltipBgColor);

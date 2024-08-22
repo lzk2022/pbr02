@@ -1,6 +1,9 @@
 #pragma once
 #include <unordered_map>
 #include <GLM/glm.hpp>
+#define KB_SPACE	32		// 根据ASCII码表定义
+#define KB_ESCAPE	27
+#define KB_ENTER	13
 namespace core {
 	enum class MouseAxis : char {
 		Horizontal,  // 水平轴

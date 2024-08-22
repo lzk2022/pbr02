@@ -16,6 +16,7 @@ namespace core {
 		static float Width();
 		static float Height();
 		static bool OnExitRequest();
+		static void OnLayerSwitch();
 	public:
 		inline static std::string mTitle = "PBR";
 		inline static GLuint mWidth = 0;
@@ -23,7 +24,7 @@ namespace core {
 		inline static GLuint mPosX = 0;
 		inline static GLuint mPosY = 0;
 		inline static float mAspectRatio = 16.0f / 9.0f;
-		static inline Layer mLayer = Layer::Scene;  // 当前窗口图层
+		static inline Layer mLayer = Layer::ImGui;  // 当前窗口图层
 	public:
 		inline static GLFWwindow* mpWindow = nullptr;
 	};
