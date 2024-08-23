@@ -42,7 +42,7 @@ namespace core {
 		Clock::Update();
 		Renderer::DrawScene();
 		Renderer::DrawImGui();
-		//Renderer::Flush();
+		Renderer::Flush();
 	}
 	void Application::Clear()
 	{

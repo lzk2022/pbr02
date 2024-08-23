@@ -53,7 +53,7 @@ namespace scene {
 		}
 		UI::EndFrame();
 
-		Flush();
+		//Flush();
 		if (isSwitchScene) {
 			Detach();				// 分离当前场景（阻塞调用）
 			Attach(nextSceneTitle);	// 附加下一个场景（阻塞调用）
