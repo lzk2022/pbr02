@@ -30,7 +30,7 @@ namespace core {
 		Input::Clear();
 		Input::HideCursor();
 		// Renderer::Attach("欢迎界面");
-		Renderer::Attach("前向渲染界面");
+		Renderer::Attach("布料模拟渲染界面");
 	}
 
 

@@ -57,7 +57,7 @@ namespace asset {
 
 		// 图像加载存储不允许3通道格式，必须使用GL_RGBA
 		mFormat = GL_RGBA;
-		mIFormat = GL_RGB16F;
+		mIFormat = GL_RGBA16F;
 
 		// 如果levels为0，则自动计算需要的mipmap级别数
 		if (level == 0) mLevel = Math::CalMipmap(mWidth, mHeight);

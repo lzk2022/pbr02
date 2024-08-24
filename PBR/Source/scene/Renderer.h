@@ -27,6 +27,7 @@ public:
 	static void SetDepthPrepass(bool enable);		// 启用或禁用深度预处理
 	static void SetFrontFace(bool ccw);				// 设置前面朝向，顺时针或逆时针
 	static void SetMSAA(bool enable);				// 启用或禁用多重采样抗锯齿
+	static void PrimitiveRestart(bool enable);
 
 	static void Render(const std::shared_ptr<Shader> shader = nullptr);
 	// 向渲染队列提交若干实体ID

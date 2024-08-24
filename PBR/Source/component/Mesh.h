@@ -39,6 +39,7 @@ namespace component {
 		void Draw() const;
 		void SetMaterialID(GLuint mid) const;
 		static void DrawQuad();
+		static void DrawGrid();
 
 	private:
 		// 创建一个球体网格

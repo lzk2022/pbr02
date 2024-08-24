@@ -1,5 +1,5 @@
 // 将(2:1)的等矩形贴图转换为(1:1 x 6)的立方体贴图贴图
-
+#version 460 core
 #ifdef compute_shader
 
 layout(local_size_x = 32, local_size_y = 32, local_size_z = 1) in;  // 设置本地工作组大小

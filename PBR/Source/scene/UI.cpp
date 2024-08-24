@@ -303,6 +303,35 @@ namespace scene {
         ImGui::End();  // 结束ImGui窗口
     }
 
+    void UI::DrawRainbowBar(const ImVec2& offset, float height)
+    {
+        // 绘制给定高度的彩虹条
+        // 彩虹条的宽度会自动调整以居中显示在窗口内
+        // 偏移量是相对于窗口左上角的像素
+
+        // 该函数借鉴并修改自unknown cheats论坛
+        // 来源：https://www.unknowncheats.me/forum/2550901-post1.html
+
+        float speed = 0.0006f;  // 彩虹条颜色变化的速度
+        static float static_hue = 0.0f;  // 静态色相值
+
+        ImDrawList* drawList = ImGui::GetWindowDrawList();  // 获取窗口绘图列表
+        ImVec2 pos = ImGui::GetWindowPos() + offset;  // 计算彩虹条的位置
+        float width = ImGui::GetWindowWidth() - offset.x * 2.0f;  // 计算彩虹条的宽度
+
+        static_hue -= speed;  // 更新静态色相值
+        if (static_hue < -1.0f) {
+            static_hue += 1.0f;  // 确保色相值在0到1之间循环
+        }
+
+        for (int i = 0; i < width; i++) {  // 遍历彩虹条的宽度
+            float hue = static_hue + (1.0f / width) * i;  // 计算当前像素的色相值
+            if (hue < 0.0f) hue += 1.0f;  // 确保色相值在0到1之间
+            ImColor color = ImColor::HSV(hue, 1.0f, 1.0f);  // 计算颜色
+            drawList->AddRectFilled(ImVec2(pos.x + i, pos.y), ImVec2(pos.x + i + 1, pos.y + height), color);  // 绘制彩虹条的一个像素
+        }
+    }
+
     char* UI::ToU8(const std::string str)
     {
         const char* GBK_LOCALE_NAME = "CHS";

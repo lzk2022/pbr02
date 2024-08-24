@@ -280,5 +280,15 @@ namespace component {
         gInternalVAO->Bind();  // 绑定内部VAO
         glDrawArrays(GL_TRIANGLES, 0, 3);  // 绘制三角形，使用3个顶点，调用3次顶点着色器
     }
+
+    void Mesh::DrawGrid()
+    {
+        if (gInternalVAO == nullptr) {
+            gInternalVAO = std::make_unique<VAO>();  // 如果内部VAO为空，则包装一个新的VAO
+        }
+
+        gInternalVAO->Bind();  // 绑定内部VAO
+        glDrawArraysInstancedBaseInstance(GL_TRIANGLES, 0, 6, 1, 0);  // 绘制六边形，使用6个顶点，调用6次实例
+    }
  
 }

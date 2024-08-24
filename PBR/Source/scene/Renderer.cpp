@@ -178,6 +178,20 @@ namespace scene {
 			isEnabled = false; // 更新标志
 		}
 	}
+	void Renderer::PrimitiveRestart(bool enable)
+	{
+		static bool isEnabled = false; // 原始重启启用标志
+
+		if (enable && !isEnabled) {
+			glEnable(GL_PRIMITIVE_RESTART);			// 启用原始重启
+			glPrimitiveRestartIndex(0xFFFFFF);		// 设置原始重启索引
+			isEnabled = true;
+		}
+		else if (!enable && isEnabled) {
+			glDisable(GL_PRIMITIVE_RESTART);		// 禁用原始重启
+			isEnabled = false;
+		}
+	}
 	void Renderer::Render(const std::shared_ptr<Shader> shader)
 	{
 		auto& reg = mCurrScene->mRegistry; // 获取当前场景的实体注册表

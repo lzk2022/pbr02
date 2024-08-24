@@ -15,13 +15,13 @@
 #define LOG_EXCEPTION_TRUE(condition,format,...) if(condition) Log::Exception(Log::Format(format,__VA_ARGS__),__LINE__,__FUNCTION__,__FILE__);
 #define LOG_EXCEPTION(condition,format,...) if(!(condition)) Log::Exception(Log::Format(format,__VA_ARGS__),__LINE__,__FUNCTION__,__FILE__);
 
-//#define LOG_TRACK Log::Track(__LINE__,__FUNCTION__,__FILE__);
-#define LOG_TRACK\
-    static std::time_t sPreTime = 0;\
-    auto curTime = std::time(nullptr);\
-    double interval = std::difftime(curTime, sPreTime); \
-    if (sPreTime ==0 || interval > 0.1) Log::Track(__LINE__,__FUNCTION__,__FILE__);\
-    sPreTime = curTime;
+#define LOG_TRACK 
+//#define LOG_TRACK\
+//    static std::time_t sPreTime = 0;\
+//    auto curTime = std::time(nullptr);\
+//    double interval = std::difftime(curTime, sPreTime); \
+//    if (sPreTime ==0 || interval > 0.1) Log::Track(__LINE__,__FUNCTION__,__FILE__);\
+//    sPreTime = curTime;
 
 namespace utils {
     enum class Level

@@ -156,6 +156,7 @@
     <ClCompile Include="Source\asset\Buffer.cpp" />
     <ClCompile Include="Source\component\Mesh.cpp" />
     <ClCompile Include="Source\core\Event.cpp" />
+    <ClCompile Include="Source\example\Scene02.cpp" />
     <ClCompile Include="Source\utils\Math.cpp" />
     <ClCompile Include="Source\asset\Shader.cpp" />
     <ClCompile Include="Source\core\Clock.cpp" />
@@ -239,6 +240,10 @@
     <None Include="Shader\scene_01\pbr.glsl" />
     <None Include="Shader\scene_01\pbr1.glsl" />
     <None Include="Shader\scene_01\post_process.glsl" />
+    <None Include="Shader\scene_02\cloth_normal.glsl" />
+    <None Include="Shader\scene_02\cloth_position.glsl" />
+    <None Include="Shader\scene_02\pbr.glsl" />
+    <None Include="Shader\scene_02\post_process.glsl" />
     <None Include="Shader\utils\easing.glsl" />
     <None Include="Shader\utils\extension.glsl" />
     <None Include="Shader\utils\gaussian.glsl" />

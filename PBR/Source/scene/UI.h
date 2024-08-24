@@ -36,6 +36,14 @@ namespace scene {
 		********************************************************************************/
 		static void DrawGizmo(scene::Entity& camera, scene::Entity& target, Gizmo z);
 
+		/********************************************************************************
+		* @brief        绘制彩虹色条
+		*********************************************************************************
+		* @param        offset: 偏移量
+		* @param        height: 高度
+		********************************************************************************/
+		static void DrawRainbowBar(const ImVec2& offset, float height);
+
 		static char* ToU8(const std::string str);
 
 	public:
