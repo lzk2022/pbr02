@@ -13,9 +13,16 @@
 该项目目前还在进行中，后面会添加游戏引擎中的更多功能
 
 ## 目前实现的功能截图
+前向渲染界面
 ![alt text](image/README/image-1.png)
 
+布料仿真渲染界面
+![alt text](image/README/image-2.png)
 
+![alt text](image/README/image-3.png)
 
+![alt text](image/README/image-4.png)
+
+游戏引擎框架
 ![alt text](image/README/48cb615774a876eba57cf160fccf282.jpg)
 
